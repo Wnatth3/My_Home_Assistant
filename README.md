@@ -5,18 +5,14 @@
     VictoriaMatrics
     https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics
 
-
-    Cloudflared
-    Tobia Brenner https://github.com/brenner-tobias/
+    Cloudflared:  
     https://github.com/brenner-tobias/ha-addons
 
-Frigate Add-ons
-blakeblackshear
-*https://github.com/blakeblackshear/frigate-hass-addons*
+    Frigate Add-ons:  
+    https://github.com/blakeblackshear/frigate-hass-addons
 
-HA Add-ons by alexbelgium
-alexbelgium
-https://github.com/alexbelgium/hassio-addons
+    HA Add-ons by alexbelgium:  
+    https://github.com/alexbelgium/hassio-addons
 
 HACS Add-ons Repository
 HACS <hi@hacs.xyz>
