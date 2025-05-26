@@ -4,9 +4,9 @@
     * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics*
 
 
-Cloudflared
-Tobia Brenner https://github.com/brenner-tobias/
-*https://github.com/brenner-tobias/ha-addons*
+* Cloudflared
+* Tobia Brenner https://github.com/brenner-tobias/
+* https://github.com/brenner-tobias/ha-addons*
 
 Frigate Add-ons
 blakeblackshear
