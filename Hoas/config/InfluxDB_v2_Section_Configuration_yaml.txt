@@ -1,0 +1,28 @@
+# Home Assistant path: /config/configuration.yaml
+
+influxdb:
+  api_version: 2
+  ssl: false
+  host: localhost
+  port: 8086
+  token: H0w_3loOZR77cZG9UvoqYHQGFqmFApo2bMpfZbVZ_b4H2bzVKmmpzt9e2AwXivW01zZ-bNRfyxkfMlwyApqomA==
+  organization: 715a8af51cd29504
+  bucket: home-assistant
+  tags:
+    source: HA
+  tags_attributes:
+    - friendly_name
+  default_measurement: units
+  exclude:
+    entities:
+      - zone.home
+    domains:
+      - persistent_notification
+      - person
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+      - sun
+    entities:
+      - weather.home

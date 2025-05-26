@@ -1,0 +1,8 @@
+# Options
+enable_basic_auth: false
+basic_auth_user: <username>
+basic_auth_pass: <password>
+enable_tls: false
+cert_file: ""
+cert_key: ""
+cmdline_extra_args: ""

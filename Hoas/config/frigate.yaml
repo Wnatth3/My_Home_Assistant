@@ -1,0 +1,84 @@
+version: 0.15-1
+mqtt:
+  enabled: true
+  host: <ip_address_of_mqtt_broker>
+  port: 1883
+  user: <mqtt_username>
+  password: <mqtt_password>
+
+# ffmpeg:
+#   hwaccel_args: preset-vaapi # Gen1-12
+
+# detectors:
+#   ov:
+#     type: openvino
+#     device: CPU
+#     model:
+#       path: /openvino-model/FP16/ssdlite_mobilenet_v2.xml
+  # coral1:
+  #   type: edgetpu
+  #   device: pci:0
+  # coral2:
+  #   type: edgetpu
+  #   device: pci:1
+
+# model:
+#   width: 300
+#   height: 300
+#   input_tensor: nhwc
+#   input_pixel_format: bgr
+#   path: /openvino-model/ssdlite_mobilenet_v2.xml
+#   labelmap_path: /openvino-model/coco_91cl_bkgr.txt
+
+# go2rtc:
+#   enabled: false
+#   streams:
+#     mjpeg_cam: "ffmpeg:http://192.168.0.105/mjpeg/1#video=h264#hardware" # <- use hardware acceleration to create an h264 stream usable for other components.
+
+
+# cameras:
+#   cam01: # <------ Name the camera
+#     enabled: true
+#     ffmpeg:
+#       #hwaccel_args: preset-vaapi
+#       inputs:
+#         - path: /media/frigate/person-bicycle-car-detection.mp4
+#           input_args: -re -stream_loop -1 -fflags +genpts
+#           roles:
+#             - detect
+#     #         # - rtmp
+#     detect:
+#       enablede: false
+#     #   height: 1080
+#     #   width: 1920
+#       fps: 5
+
+  # mjpeg_cam:
+  #   enabled: true
+  #   ffmpeg:
+  #     inputs:
+  #       - path: http://192.168.0.104/mjpeg/1
+  #         input_args: preset-http-mjpeg-generic
+  #         roles:
+  #           - detect
+  #   detect:
+  #     enabled: false
+  #   #   height: 1080
+  #   #   width: 1920
+  #     fps: 5
+
+  # restream_cam: # <------ Name the camera
+  #   enabled: true
+  #   ffmpeg:
+  #     #hwaccel_args: preset-vaapi
+  #     inputs:
+  #       - path: rtsp://127.0.0.1:8554/mjpeg_cam
+  #         input_args: preset-rtsp-restream
+  #         roles:
+  #           - detect
+  #   detect:
+  #     enablede: false
+  # #     height: 720
+  # #     width: 1280
+  #     fps: 5  
+

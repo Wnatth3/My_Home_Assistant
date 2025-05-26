@@ -1,0 +1,159 @@
+# Loads default set of integrations. Do not remove.
+default_config:
+
+# media_source:
+
+# Load frontend themes from the themes folder
+frontend:
+  themes: !include_dir_merge_named themes
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+# ffmpeg
+ffmpeg:
+
+# Custom Panels
+panel_custom:
+  - name: Supervisor
+    url_path: hassio/system
+    sidebar_title: Supervisor
+    sidebar_icon: mdi:home-assistant
+    module_url: /local/panel-redirect.js
+
+# Cloudflare Tunnel
+http:
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - 172.30.33.0/24
+    - 192.168.0.52 # <=== The Cloudflared IP
+
+# MQTT Broker
+mqtt:
+  switch:
+    - name: "Pump Switch"
+      unique_id: pump_switch
+      state_topic: "pump/switch"
+      command_topic: "pump/switch/set"
+      # availability:
+      #   - topic: "pump/switch/available"
+      payload_on: "ON"
+      payload_off: "OFF"
+      state_on: "ON"
+      state_off: "OFF"
+      optimistic: true
+      qos: 1
+      retain: false
+  sensor:
+    - name: "Temp"
+      state_topic: "sensor/temp"
+      unit_of_measurement: "°C"
+      value_template: "{{ value | float }}"
+  camera:
+    - name: "My Cam"
+      unique_id: "myCam"
+      topic: cam/mycam
+
+influxdb:
+  # # InfluxDB v2
+  # api_version: 2
+  # ssl: false
+  # host: localhost
+  # port: 8086
+  # token: OZR77...Apo2b
+  # organization: <16_digits_org_id>
+  # bucket: <bucket_name>
+  # tags:
+  #   source: HA
+  # tags_attributes:
+  #   - friendly_name
+  # default_measurement: units
+  # exclude:
+  #   entities:
+  #     - zone.home
+  #   domains:
+  #     - persistent_notification
+  #     - person
+  # include:
+  #   domains:
+  #     - sensor
+  #     - binary_sensor
+  #     - sun
+  #   entities:
+  #     - weather.home
+  
+  # VictoriaMetrics
+  api_version: 1
+  host: 192.168.0.81
+  port: 8428
+  max_retries: 3
+  measurement_attr: entity_id
+  tags_attributes:
+    - friendly_name
+    - unit_of_measurement
+  ignore_attributes:
+    - icon
+    - source
+    - options
+    - editable
+    - min
+    - max
+    - step
+    - mode
+    - marker_type
+    - preset_modes
+    - supported_features
+    - supported_color_modes
+    - effect_list
+    - attribution
+    - assumed_state
+    - state_open
+    - state_closed
+    - writable
+    - stateExtra
+    - event
+    - friendly_name
+    - device_class
+    - state_class
+    - ip_address
+    - device_file
+    - unit_of_measurement
+    - unitOfMeasure
+    - color_mode
+    - hs_color
+    - rgb_color
+    - xy_color
+    - hvac_action
+    - value
+    - writeable
+    - attribution
+    - dataCorrect
+    - dayname
+  include:
+    domains:
+      - sensor
+      - binary_sensor
+  #     - light
+  #     - switch
+  #     - cover
+  #     - climate
+  #     - input_boolean
+  #     - input_select
+  #     - number
+  #     - lock
+  #     - weather
+  exclude:
+    entity_globs:
+      - sensor.fps*
+  #     - sensor.clock*
+  #     - sensor.date*
+  #     - sensor.glances*
+  #     - sensor.time*
+  #     - sensor.uptime*
+  #     - sensor.dwd_weather_warnings_*
+  #     - weather.weatherstation
+  #     - binary_sensor.*_smartphone_*
+  #     - sensor.*_smartphone_*
+  #     - sensor.adguard_home_*
+  #     - binary_sensor.*_internet_access

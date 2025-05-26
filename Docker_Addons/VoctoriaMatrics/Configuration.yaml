@@ -1,0 +1,13 @@
+# Options
+retention: 1y
+additionalArguments: ""
+enableHTTPAuth: false
+username: ""
+password: ""
+enablePrometheusScrape: false
+prometheusScrapeHTTPS: false
+prometheusScrapeInterval: 15s
+prometheusScrapeTimeout: 10s
+longelivedToken: ""
+homeassistantUrl: ""
+prometheusScrapeConfig: scrape.yaml

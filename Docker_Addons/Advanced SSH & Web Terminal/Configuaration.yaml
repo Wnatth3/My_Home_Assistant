@@ -1,0 +1,18 @@
+# Options
+ssh:
+  username: <username>
+  password: <password>
+  authorized_keys:
+    - >-
+      ssh-rsa
+      AAAAB...Y9z1u
+      rsa-key-20xxxx21
+  sftp: false
+  compatibility_mode: false
+  allow_agent_forwarding: false
+  allow_remote_port_forwarding: false
+  allow_tcp_forwarding: false
+zsh: true
+share_sessions: false
+packages: []
+init_commands: []
