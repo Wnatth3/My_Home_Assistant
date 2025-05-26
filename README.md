@@ -6,9 +6,9 @@
     https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics
 
 
-Cloudflared
-Tobia Brenner https://github.com/brenner-tobias/
-https://github.com/brenner-tobias/ha-addons
+    Cloudflared
+    Tobia Brenner https://github.com/brenner-tobias/
+    https://github.com/brenner-tobias/ha-addons
 
 Frigate Add-ons
 blakeblackshear
