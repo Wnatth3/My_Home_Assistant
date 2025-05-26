@@ -5,7 +5,7 @@
 
 
 Cloudflared
-Tobia Brenner <https://github.com/brenner-tobias/>
+Tobia Brenner https://github.com/brenner-tobias/
 *https://github.com/brenner-tobias/ha-addons*
 
 Frigate Add-ons
