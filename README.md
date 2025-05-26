@@ -1,12 +1,14 @@
 ## Installation and configuration
 
 1. Add the reposity. (Quick link: [![Open your Home Assistant instance and show the Supervisor add-on store.](https://my.home-assistant.io/badges/supervisor_store.svg)](https://my.home-assistant.io/redirect/supervisor_store/) )
-    * **Add the reposity** (click 3 dots on the top right of the screen). Reposity URL: *https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics*
+    * **Add the reposity** (click 3 dots on the top right of the screen). 
+    VictoriaMatrics
+    https://github.com/VictoriaMetrics-Community/homeassistant-addon-victoriametrics
 
 
-* Cloudflared
-* Tobia Brenner https://github.com/brenner-tobias/
-* https://github.com/brenner-tobias/ha-addons*
+Cloudflared
+Tobia Brenner https://github.com/brenner-tobias/
+https://github.com/brenner-tobias/ha-addons
 
 Frigate Add-ons
 blakeblackshear
