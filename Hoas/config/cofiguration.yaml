@@ -55,7 +55,7 @@ mqtt:
       unique_id: "myCam"
       topic: cam/mycam
 
-influxdb:
+# influxdb:
   # # InfluxDB v2
   # api_version: 2
   # ssl: false
@@ -83,57 +83,70 @@ influxdb:
   #   entities:
   #     - weather.home
   
-  # VictoriaMetrics
-  api_version: 1
-  host: <home_assistant_ip>
-  port: 8428
-  max_retries: 3
-  measurement_attr: entity_id
-  tags_attributes:
-    - friendly_name
-    - unit_of_measurement
-  ignore_attributes:
-    - icon
-    - source
-    - options
-    - editable
-    - min
-    - max
-    - step
-    - mode
-    - marker_type
-    - preset_modes
-    - supported_features
-    - supported_color_modes
-    - effect_list
-    - attribution
-    - assumed_state
-    - state_open
-    - state_closed
-    - writable
-    - stateExtra
-    - event
-    - friendly_name
-    - device_class
-    - state_class
-    - ip_address
-    - device_file
-    - unit_of_measurement
-    - unitOfMeasure
-    - color_mode
-    - hs_color
-    - rgb_color
-    - xy_color
-    - hvac_action
-    - value
-    - writeable
-    - attribution
-    - dataCorrect
-    - dayname
-  include:
-    domains:
+  # # VictoriaMetrics
+  # api_version: 1
+  # host: <home_assistant_ip>
+  # port: 8428
+  # max_retries: 3
+  # measurement_attr: entity_id
+  # tags_attributes:
+  #   - friendly_name
+  #   - unit_of_measurement
+  # ignore_attributes:
+  #   - icon
+  #   - source
+  #   - options
+  #   - editable
+  #   - min
+  #   - max
+  #   - step
+  #   - mode
+  #   - marker_type
+  #   - preset_modes
+  #   - supported_features
+  #   - supported_color_modes
+  #   - effect_list
+  #   - attribution
+  #   - assumed_state
+  #   - state_open
+  #   - state_closed
+  #   - writable
+  #   - stateExtra
+  #   - event
+  #   - friendly_name
+  #   - device_class
+  #   - state_class
+  #   - ip_address
+  #   - device_file
+  #   - unit_of_measurement
+  #   - unitOfMeasure
+  #   - color_mode
+  #   - hs_color
+  #   - rgb_color
+  #   - xy_color
+  #   - hvac_action
+  #   - value
+  #   - writeable
+  #   - attribution
+  #   - dataCorrect
+  #   - dayname
+  # include:
+  #   domains:
+  #     - sensor
+  #     - binary_sensor
+  # # exclude:
+  # #   entity_globs:
+  # #     - sensor.fps*
+
+  # Example filter to include specified domains and exclude specified entities
+prometheus:
+  namespace: hoas
+  filter:
+    include_domains:
       - sensor
       - binary_sensor
-  # exclude:
-  #   entity_globs:
-  #     - sensor.fps*
+    # include_entity_globs:
+    #   - sensor.*
+    #   - binary_sensor.*
+    # exclude_entities:
+    #   - sensor.fps*
