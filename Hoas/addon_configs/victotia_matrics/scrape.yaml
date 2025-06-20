@@ -19,7 +19,7 @@ scrape_configs:
   metrics_path: /api/prometheus
   bearer_token: "<you_long_lived_token>"
   static_configs:
-    - targets: ['<home_assistatn_ip:8123/api/prometheus']
+    - targets: ['home_assistant_ip:8123/api/prometheus']
 # ----- End file ----- #
 
 # 2. Go to VictoriaMatrics Add-on > Configuratign tab 
